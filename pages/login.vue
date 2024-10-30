@@ -1,3 +1,4 @@
+<!-- pages/login.vue -->
 <template>
     <div>
         <h1>Login</h1>
@@ -16,9 +17,9 @@
     </div>
 </template>
 
-<script setup>
+<script setup>  ``
 import { ref } from 'vue'
-import { useAuthenStore } from '@/stores/auth.js'
+import { useAuthStore } from '@/stores/auth'
 import { useRouter } from 'vue-router'
 
 const username = ref('')
@@ -38,5 +39,5 @@ const handleLogin = () => {
 
 
 </script>
-
-<style lang="scss" scoped></style>
+<style>
+</style>
