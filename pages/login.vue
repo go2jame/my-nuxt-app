@@ -31,7 +31,7 @@ const router = useRouter()
 const handleLogin = () => {
     if (authStore.login(username.value, password.value)) {
         loginError.value = false
-        router.push('/')
+        router.push('/products')
     } else {
         loginError.value = true
     }
