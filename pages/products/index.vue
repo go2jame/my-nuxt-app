@@ -2,7 +2,7 @@
     <div>
         <h1>Product List</h1>
         <!-- <router-link to="/cart">View Cart</router-link> -->
-         <cart />
+        <cart />
         <div v-if="productStore.loading">Loading...</div>
         <div v-if="productStore.error"> {{ productStore.error }} </div>
 
@@ -27,6 +27,8 @@
 import axios from 'axios';
 import { useProductStore } from '@/stores/product';
 import { useCartStore } from '@/stores/cart'
+import { useAuthStore } from "@/stores/auth";
+import { useRouter } from 'vue-router';
 
 
 // import ref from 'vue'
@@ -35,11 +37,15 @@ const products = ref([])
 const productStore = useProductStore()
 const cartStore = useCartStore()
 
+definePageMeta({
+    middleware: 'auth'
+})
+
 // สร้างฟังก์ชันเพิ่มสินค้าไปยัง Cart
 const addToCart = (product) => {
-  cartStore.addToCart(product)
+    cartStore.addToCart(product)
 }
-const cartCount = computed(() =>cartStore.cartCount)
+const cartCount = computed(() => cartStore.cartCount)
 
 
 onMounted(async () => {
