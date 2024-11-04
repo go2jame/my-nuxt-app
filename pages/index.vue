@@ -11,9 +11,9 @@
 
 import ProductList from '@/components/ProductList.vue'
 
-definePageMeta({
-    middleware: 'auth'
-})
+// definePageMeta({
+//     middleware: 'auth'
+// })
 </script>
 
 <style scoped>

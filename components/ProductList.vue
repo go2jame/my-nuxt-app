@@ -3,7 +3,7 @@
         <div>Full path {{ url }}</div>
         <h1>Product List</h1>
         <button @click="fetchProducts" :disabled="isLoading">
-            {{ isLoading ? 'Loading...' : 'Load Products' }}
+            {{ isLoading ? 'Loading...' : 'Click to load Products' }}
         </button>
         <ul v-if="products.length">
             <li v-for="product in products" :key="product.id">
