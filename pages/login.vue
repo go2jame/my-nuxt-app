@@ -6,7 +6,6 @@
             <div>
                 <label>Username:</label>
                 <input v-model="username" type="text" required />
-
             </div>
             <div>
                 <label>Password:</label>
@@ -14,7 +13,12 @@
             </div>
             <button type="submit">Login</button>
         </form>
+        <div v-if="authStore.isLoading">Please Wait...</div>
         <p v-if="loginError" style="color: red;">Incorrect username or password</p>
+        <div>
+            Admin <br>
+            username:'johnd', password:'m38rmF$',
+        </div>
     </div>
 </template>
 
@@ -30,12 +34,13 @@ const authStore = useAuthStore()
 const router = useRouter()
 
 const handleLogin = () => {
+    loginError.value = false
     authStore.login(username.value, password.value)
         .then(
             () => {
                 loginError.value = false
                 // router.push('/products')
-                return navigateTo('/products')
+                return navigateTo('/profile')
             }
         )
         .catch(
@@ -44,7 +49,6 @@ const handleLogin = () => {
                 // console.log(error)
             }
         )
-    
 }
 </script>
 <style></style>

@@ -3,6 +3,8 @@
     <div>
       <h1>User Profile</h1>
       <p>Welcome, {{ user.username }}!</p>
+      <div>Role : {{ authStore.role }}</div>
+      <div>Role isAdmin : {{ authStore.isAdmin }}</div>
       <button @click="logout">Logout</button>
     </div>
   </template>
@@ -16,7 +18,7 @@ definePageMeta({
 })
 
 const authStore = useAuthStore()
-const user = authStore.user
+const user = authStore.user 
 const router = useRouter()
 
 const logout = () => {

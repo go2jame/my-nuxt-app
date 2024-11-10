@@ -8,6 +8,7 @@
 
 <script setup>
 // navigateTo('/')
+
 </script>
 
 <style scoped>
