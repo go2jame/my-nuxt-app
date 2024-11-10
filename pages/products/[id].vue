@@ -22,6 +22,10 @@ const productStore = useProductStore()
 const route = useRoute()
 const product = ref({})
 
+definePageMeta({
+    middleware: 'auth'
+})
+
 onMounted(() => {
     const productId = route.params.id
     // productStore.fetchProducts().then(() => {
