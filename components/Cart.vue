@@ -25,10 +25,8 @@ const { addToCart, removeFromCart, decreaseQuantity } = cartStore
 const cartCount = computed(() => cartStore.cartCount)
 const items = computed(() => cartStore.items)
 
-
 const increaseQuantity = (item) => {
   console.log('Increasing quantity for:', item)
-
   addToCart(item)
 }
 </script>

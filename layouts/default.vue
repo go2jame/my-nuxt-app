@@ -1,9 +1,9 @@
 <template>
     <div>
         <!-- <p>Some default layout content shared across all pages</p> -->
-         <div>
+        <div>
             <p>Total items in cart: {{ cartCount }}</p>
-         </div>
+        </div>
         <div class="header">
             <ul>
                 <li>
@@ -20,6 +20,9 @@
                 </li>
                 <li>
                     <NuxtLink to="/admin">ADMIN</NuxtLink>
+                </li>
+                <li>
+                    <NuxtLink to="/login">LOGIN</NuxtLink>
                 </li>
             </ul>
         </div>
@@ -62,7 +65,7 @@ div.main {
     min-height: 400px;
 }
 
-.router-link-active{
+.router-link-active {
     background: rgb(85, 0, 255);
     border-radius: 6px;
 }
@@ -95,5 +98,9 @@ ul li>a {
     display: block;
 }
 
+html.dark .header,
+html.dark .footer{
+    background:black !important;
+}
 
 </style>

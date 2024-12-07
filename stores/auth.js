@@ -26,8 +26,8 @@ export const useAuthStore = defineStore('auth', {
           username: username,
           password: password
         })
+        
         this.responseStatus = response.status
-
         this.token = response.data.token
         localStorage.setItem('token', response.data.token)
       } finally {
@@ -42,8 +42,6 @@ export const useAuthStore = defineStore('auth', {
         } else {
           this.role = 'user'
         }
-
-
         // this.isAuthenticated = true
         return true
       }

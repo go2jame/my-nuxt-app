@@ -1,3 +1,15 @@
-body{
+/* body{
     background:white;
+} */
+
+html.dark {
+  background-color: #222;
+  color: white;
 }
+
+html.light {
+  background-color: white;
+  color: black;
+}
+
+
